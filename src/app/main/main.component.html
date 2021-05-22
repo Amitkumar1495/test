@@ -1,0 +1,45 @@
+<script src="https://www.youtube.com/iframe_api"></script>
+<div><img src="{{data.data.banner}}" class="rounded"></div>
+<!-- <div><video src="{{(data.data.video_link)}}"></video></div>
+<div>{{(data.data.video_link)}}</div> -->
+<div class="row pt-3" >
+	<div class="col-sm-8 rounded">
+		 <youtube-player 
+		  videoId="{{data.data.introduction_video_id}}"
+		  suggestedQuality="highres" 
+		  [height]="" 
+		  [width]="" 
+		  [startSeconds]="4"
+		  [endSeconds]="8"
+		  class="rounded">
+		</youtube-player>			
+	</div>
+	<div class="col-sm-4">
+		<h5><b>{{data.data.introduction_video_title}}</b></h5> Head chef of Apampa Household
+	</div>
+</div>
+
+<div class="mt-4">
+	<div class="row">
+		<h2>Featured Recipes</h2>
+		<p>Browse the selection of the featured recipes including different cuisines to get you off to a great start.</p>
+		<div class="row">
+		  <div class="card col-sm-4 m-2" *ngFor="let receipe of receipies2">
+		    <img class="card-img-top" src="{{receipe.recipes[0].thumbnail}}" alt="Card image cap">
+		    <div class="card-body">
+		      <h5 class="card-title">{{receipe.recipes[0].name}}</h5>
+		      <p>By <a href="" class="text-danger">{{receipe.recipes[0].chef.name}}</a></p>
+		      <p><i class="fa fa-star text-warning pr-1"></i> {{receipe.recipes[0].rating}} 
+		      	<span class="pr-1"><i class="fa fa-user pr-1"></i> {{receipe.recipes[0].feeds_people}} </span>
+		      	<span class="pr-1"><i class="fa fa-award pr-1"></i> {{receipe.recipes[0].difficulty_level}} </span>
+		      	<span class="pr-1"><i class="fa fa-clock pr-1"></i> {{receipe.recipes[0].time}} </span>
+		      <p class="text-danger pr-4"><b><span>€</span> {{receipe.recipes[0].price}}</b><span class="mybutton"><button class="btn btn-success rounded">Add to basket</button></span></p>
+		    </div>
+		    <div class="card-footer">
+		      <small class="text-muted">Last updated 3 mins ago</small>
+		    </div>
+		  </div>
+		</div>
+	</div>
+	
+</div>
